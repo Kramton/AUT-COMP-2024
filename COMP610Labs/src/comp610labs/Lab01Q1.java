@@ -4,15 +4,8 @@
  */
 package comp610labs;
 
-/**
- *
- * @author mark
- */
 public class Lab01Q1 
 {
-    /**
-     * @param args the command line arguments
-     */	
     public static void main(String[] args) 
     {
        diamond(6, 6);
@@ -32,18 +25,17 @@ public class Lab01Q1
     // prints the shape
     public static void diamond(int totalHeight, int currentRow)
     {
-        repeatlyPrint(totalHeight, " ");
-        repeatlyPrint(totalHeight - currentRow, "*" + " ");
+        repeatlyPrint(totalHeight, "_");
+        repeatlyPrint(totalHeight - currentRow, "*" + "_");
         
         if(totalHeight > 0)
         {
             diamond(totalHeight - 1, currentRow + 1);
         }
         
-        repeatlyPrint(totalHeight - currentRow, " ");
-        repeatlyPrint(totalHeight, "*" + " ");
+        repeatlyPrint(totalHeight - currentRow, "_");
+        repeatlyPrint(totalHeight, "*" + "_");
         
         System.out.println("");
     }
-    
 }
