@@ -15,7 +15,7 @@ public class Lab01Q1
     {
         if(amount > 0)
         {
-            // prints a pattern once
+            // print a pattern once
             System.out.print(pattern);
             
             // recursively call the function itself
@@ -23,14 +23,13 @@ public class Lab01Q1
         }
     }
     
-    // prints the shape
     public static void diamond(int totalHeight, int currentRow)
     {
-        // prints spaces outside of diamond
-        repeatlyPrint(currentRow, "_");
+        // print spaces outside of diamond
+        repeatlyPrint(currentRow, " ");
         
         // prints asterisks and spaces
-        repeatlyPrint(totalHeight - currentRow, "*_");
+        repeatlyPrint(totalHeight - currentRow, "* ");
         
         System.out.println();
         
@@ -40,10 +39,10 @@ public class Lab01Q1
         }
         
         // print spaces
-        repeatlyPrint(currentRow, "_");
+        repeatlyPrint(currentRow, " ");
         
         // print asterisks and spaces
-        repeatlyPrint(totalHeight - currentRow, "*_");
+        repeatlyPrint(totalHeight - currentRow, "* ");
         
         System.out.println();
     }

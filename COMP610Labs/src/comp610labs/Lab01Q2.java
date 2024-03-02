@@ -10,35 +10,38 @@ package comp610labs;
  */
 public class Lab01Q2 
 {
-   public static void main(String[] args) {
-        int[] numbers = {1, 2, 4, 5};
+    public static void main(String[] args) 
+    {
+        int[] numberList = {1, 2, 4, 5};
 
-        // Call the method to insert a number into the array
-        InsertToArray(3, numbers, numbers.length);
-
-        // Print the array after insertion
-        for (int i = 0; i < numbers.length; i++) {
-            System.out.print(numbers[i] + " ");
+        insertToArray(3, numberList, numberList.length);
+        
+        for(int i = 0; i < numberList.length; i++)
+        {
+            System.out.print(numberList[i] + ", ");
         }
     }
 
-    public static void InsertToArray(int number, int[] list, int size) {
-        int index = size; // Initialize index to size (end of the array)
+    public static void insertToArray(int number, int[] list, int size) 
+    {
+        int index = 0;
 
-        // Find the right position for inserting a number and store the position in index
-        for (int i = 0; i < size; i++) {
-            if (list[i] > number) {
-                index = i;
+        //to find right position for inserting a number and position will be stored in the index
+        for (; index <= list.length; index++) 
+        {
+            if(list[index] > number)
+            {
                 break;
             }
         }
 
-        // Shift numbers to make space to insert the new number
-        for (int i = size - 1; i > index; i--) {
-            list[i] = list[i - 1];
+        // shift numbers to make space to insert a new number
+        for (int i = list.length - 2; i >= index; i--) 
+        {
+            list[i + 1] = list[i];
         }
-
-        // Insert the new number
+        
+        // insert a new number
         list[index] = number;
     }
 }
