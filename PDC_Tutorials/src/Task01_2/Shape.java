@@ -1,5 +1,7 @@
 package Task01_2;
 
+import java.text.DecimalFormat;
+
 public abstract class Shape {
 
     public String shapeName = "";
@@ -10,8 +12,9 @@ public abstract class Shape {
     }
 
     public void printInfo() {
+        DecimalFormat df = new DecimalFormat("0.000");
         System.out.println(this.shapeName);
-        System.out.println(this.area);
+        System.out.println(df.format(this.area));
     }
 
     public void setName(String newName) {

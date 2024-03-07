@@ -8,17 +8,18 @@ package Task01_2;
  *
  * @author mark
  */
-public class Square {
-    double side;
+public class Square extends Rectangle
+{
+    double sideLength;
     
-    public Square(double sl)
+    public Square(double sideLength)
     {
-        super(sl);
-        this.side = sl;
+        super(sideLength);
+        this.sideLength = sideLength;
     }
     
     public void calculateArea()
     {
-        this.area = this.side * this.side;
+        this.area = this.sideLength * this.sideLength;
     }
 }

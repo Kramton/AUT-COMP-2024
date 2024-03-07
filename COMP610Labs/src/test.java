@@ -15,5 +15,4 @@ public class test
         
         System.out.println(t2.getId());
     }
-        
 }

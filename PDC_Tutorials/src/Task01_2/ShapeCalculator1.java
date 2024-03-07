@@ -14,6 +14,7 @@ public class ShapeCalculator1
     {
         Shape cirObj = new Circle(2.5);
         Shape recObj = new Rectangle(12, 16.5);
+        Rectangle squObj = new Square(3.3);
         
         cirObj.calculateArea();
         cirObj.printInfo();
@@ -21,7 +22,7 @@ public class ShapeCalculator1
         recObj.calculateArea();
         recObj.printInfo();
         
-        
-
+        squObj.calculateArea();
+        squObj.printInfo();
     }
 }
