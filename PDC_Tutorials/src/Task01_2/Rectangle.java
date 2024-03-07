@@ -11,16 +11,15 @@ public class Rectangle extends Shape
         this.width = width;
     }
     
-    public Rectangle(double sidelength)
+    public Rectangle(double sideLength)
     {
         super("Square");
-        sidelength = sidelength;
-        width = sidelength;
+        sideLength = sideLength;
+        width = sideLength;
     }
     
     public void calculateArea()
     {
-        // area = base * height
         this.area = this.length * this.width;
     }
 }

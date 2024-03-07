@@ -12,7 +12,6 @@ public class Circle extends Shape
     
     public void calculateArea()
     {
-        // area of circle = pi * radius * radius
         this.area = radius * radius * Math.PI;
     }
 }
