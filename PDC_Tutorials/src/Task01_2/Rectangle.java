@@ -13,7 +13,7 @@ public class Rectangle extends Shape
     
     public Rectangle(double sidelength)
     {
-        super("Sqaure");
+        super("Square");
         sidelength = sidelength;
         width = sidelength;
     }
