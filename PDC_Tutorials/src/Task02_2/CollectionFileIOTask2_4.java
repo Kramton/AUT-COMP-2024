@@ -2,6 +2,7 @@ package Task02_2;
 
 import java.io.BufferedReader;
 import java.io.FileReader;
+import java.util.ArrayList;
 import java.util.StringTokenizer;
 
 public class CollectionFileIOTask2_4 {
@@ -10,17 +11,29 @@ public class CollectionFileIOTask2_4 {
             FileReader fr = new FileReader("/Users/mark/Documents/GitHub/AUT-COMP-2024/PDC_Tutorials/resources/T02_scores.txt");
             BufferedReader inputStream = new BufferedReader(fr);
             
+            ArrayList<String> scoreList = new ArrayList<>();
+            
             String line = null;
+            String score = "";
             while((line = inputStream.readLine()) != null) {
                 //System.out.println(line);
-                
+                score += line;
+                scoreList.add(score);
             }
             
-            StringTokenizer st = new StringTokenizer(line);
+            System.out.println(scoreList.get(1));
             
-            while(st.hasMoreTokens()) {
-                System.out.println(st.nextToken());
-            }
+//            int count = 0;
+//            while(scoreList.isEmpty() != true) {
+//                System.out.println(scoreList.get(count));
+//                count++;
+//            }
+            
+//            StringTokenizer st = new StringTokenizer(line);
+//            
+//            while(st.hasMoreTokens()) {
+//                System.out.println(st.nextToken());
+//            }
             
             inputStream.close();
         } catch (Exception e) {

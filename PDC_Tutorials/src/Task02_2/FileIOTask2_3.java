@@ -11,21 +11,21 @@ public class FileIOTask2_3 {
             int count = 0;
 
             // the most stupid way to solve this task...
-            String[] lines = new String[2];
+            String[] word = new String[2];
 
             while ((line = inputStream.readLine()) != null) {
                 count++;
 
                 if (count == 1) {
-                    lines[0] += line;
+                    word[0] += line;
                 } else if (count == 2) {
-                    lines[1] += line;
+                    word[1] += line;
                     break;
                 }
             }
 
-            System.out.println(reverseLine(lines[0]).toUpperCase() + "\n");
-            System.out.println(reverseLine(lines[1]).toUpperCase());
+            System.out.println(reverseLine(word[0]).toUpperCase() + "\n");
+            System.out.println(reverseLine(word[1]).toUpperCase());
 
             inputStream.close();
 
