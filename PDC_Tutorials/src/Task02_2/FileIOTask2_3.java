@@ -1,9 +1,7 @@
-
 import java.io.BufferedReader;
 import java.io.FileReader;
-import java.util.Scanner;
 
-public class test2 {
+public class FileIOTask2_3 {
 
     public static void main(String[] args) {
         try {
@@ -17,6 +15,7 @@ public class test2 {
             String line2 = "";
             String reverseLine1 = "";
             String reverseLine2 = "";
+            
             while ((line = inputStream.readLine()) != null) {
                 count++;
                 
@@ -30,9 +29,6 @@ public class test2 {
                     break;
                 }
             }
-            System.out.println(line1);
-            System.out.println(line2);
-            System.out.println("============Reversed===============");
             
             for (int i = 0; i < line1.length(); i++) {
                 
