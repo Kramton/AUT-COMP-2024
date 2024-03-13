@@ -17,9 +17,9 @@ public class FileIOTask2_3 {
                 count++;
 
                 if (count == 1) {
-                    word[0] += line;
+                    word[0] = line;
                 } else if (count == 2) {
-                    word[1] += line;
+                    word[1] = line;
                     break;
                 }
             }
