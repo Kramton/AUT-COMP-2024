@@ -1,7 +1,5 @@
-
 import java.io.BufferedReader;
 import java.io.FileReader;
-import java.util.Scanner;
 
 public class test2 {
 
@@ -11,50 +9,42 @@ public class test2 {
             BufferedReader inputStream = new BufferedReader(fr);
             String line = null;
             int count = 0;
-            
+
             // the most stupid way to solve this task...
-            String line1 = "";
-            String line2 = "";
-            String reverseLine1 = "";
-            String reverseLine2 = "";
+            String[] lines = new String[2];
+
             while ((line = inputStream.readLine()) != null) {
                 count++;
-                
-                if(count == 1)
-                {
-                    line1 += line;
-                }
-                else if(count == 2)
-                {
-                    line2 += line;
+
+                if (count == 1) {
+                    lines[0] += line;
+                } else if (count == 2) {
+                    lines[1] += line;
                     break;
                 }
             }
-            System.out.println(line1);
-            System.out.println(line2);
-            System.out.println("============Reversed===============");
-            
-            for (int i = 0; i < line1.length(); i++) {
-                
-                if(line1.charAt(i) == 'a' || line1.charAt(i) == 'U' || line1.charAt(i) == 't') {
-                    reverseLine1 = line1.charAt(i) + reverseLine1;
-                }
-            }
-            
-            System.out.println(reverseLine1.toUpperCase() + "\n");
-            
-            for (int i = 0; i < line2.length(); i++) {
-                if(line2.charAt(i) == 'E' || line2.charAt(i) == 'c' || line2.charAt(i) == 'm' || line2.charAt(i) == 's')
-                {
-                    reverseLine2 = line2.charAt(i) + reverseLine2;
-                }
-            }
-            System.out.println(reverseLine2.toUpperCase());
+
+            System.out.println(reverseLine(lines[0]).toUpperCase() + "\n");
+            System.out.println(reverseLine(lines[1]).toUpperCase());
 
             inputStream.close();
-            
+
         } catch (Exception e) {
-            
+
         }
+
+    }
+
+    public static String reverseLine(String line) {
+
+        String reverse = "";
+        for (int i = 0; i < line.length(); i++) {
+            if (line.charAt(i) == 'a' || line.charAt(i) == 'U' || line.charAt(i) == 't'
+                    || line.charAt(i) == 'E' || line.charAt(i) == 'c' || line.charAt(i) == 'm' || line.charAt(i) == 's') {
+                reverse = line.charAt(i) + reverse;
+            }
+        }
+
+        return reverse;
     }
 }
