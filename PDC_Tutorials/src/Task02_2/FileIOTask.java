@@ -13,7 +13,7 @@ public class FileIOTask {
         try {
             FileReader file = new FileReader("./resources/T02_input.txt");
             Scanner fileReader = new Scanner(file);
-            fileReader.useDelimiter("[^A-Za-z]");
+            //fileReader.useDelimiter("[^A-Za-z]");
             
             String data = "";
             String reverse = "";
@@ -21,34 +21,28 @@ public class FileIOTask {
             while(fileReader.hasNext()){
                 data = fileReader.nextLine();
                 reverse += data;
-                System.out.println(data.toUpperCase());
-            }
-            fileReader.close();
-            
-            for(int i = 0; i < reverse.length(); i++)
-            {
-                reverse = data.charAt(i) + reverse;
             }
             
             System.out.println(reverse);
             
+            String reverse2 = "";
+            for(int i = 0; i < reverse.length(); i++)
+            {
+                reverse2 = reverse.charAt(i) + reverse2;
+            }
+            
+            System.out.println("====================================================");
+            
+            StringTokenizer st = new StringTokenizer(reverse2, "-+_*k21hgfed9b");
+            while(st.hasMoreTokens())
+            {
+                System.out.println(st.nextToken().toUpperCase());
+            }
+            
+            fileReader.close();
+            
         } catch (Exception e) {
             
         }
-//        try {
-//            BufferedReader inStream = new BufferedReader(new FileReader("./resources/T02_input.txt"));
-//            
-//            String line = null;
-//
-//            while((line = inStream.readLine()) != null){
-//                System.out.println(line.toUpperCase());
-//            }
-//            
-//            inStream.close();
-//            
-//        } catch (Exception e) {
-//
-//        }
-
     }
 }
