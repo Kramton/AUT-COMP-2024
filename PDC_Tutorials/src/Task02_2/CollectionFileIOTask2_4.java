@@ -15,25 +15,25 @@ public class CollectionFileIOTask2_4 {
             
             String line = null;
             String score = "";
+            
             while((line = inputStream.readLine()) != null) {
-                //System.out.println(line);
-                score += line;
+                score = line;
                 scoreList.add(score);
             }
             
-            System.out.println(scoreList.get(1));
+            System.out.println("Existing Marks: ");
             
-//            int count = 0;
-//            while(scoreList.isEmpty() != true) {
-//                System.out.println(scoreList.get(count));
-//                count++;
-//            }
+            int count = 0;
+            while (scoreList.isEmpty() != true) {
+                System.out.println(scoreList.get(count));
+                count++;
+            }
             
-//            StringTokenizer st = new StringTokenizer(line);
-//            
-//            while(st.hasMoreTokens()) {
-//                System.out.println(st.nextToken());
-//            }
+            StringTokenizer st = new StringTokenizer(score);
+            
+            while(st.hasMoreTokens()) {
+                System.out.println(st.nextToken());
+            }
             
             inputStream.close();
         } catch (Exception e) {
