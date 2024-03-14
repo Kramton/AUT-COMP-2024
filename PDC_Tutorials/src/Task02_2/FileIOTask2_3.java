@@ -1,50 +1,29 @@
 import java.io.BufferedReader;
 import java.io.FileReader;
+import java.io.PrintWriter;
 
 public class FileIOTask2_3 {
 
     public static void main(String[] args) {
         try {
-            FileReader fr = new FileReader("/Users/mark/Documents/GitHub/AUT-COMP-2024/PDC_Tutorials/resources/T02_input.txt");
-            BufferedReader inputStream = new BufferedReader(fr);
-            String line = null;
-            int count = 0;
-
-            // the most stupid way to solve this task...
-            String[] word = new String[2];
-
-            while ((line = inputStream.readLine()) != null) {
-                count++;
-
-                if (count == 1) {
-                    word[0] = line;
-                } else if (count == 2) {
-                    word[1] = line;
-                    break;
+            BufferedReader br = new BufferedReader(new FileReader("./resources/T02_input.txt"));
+            PrintWriter pw = new PrintWriter("./resources/T02_output.txt");
+            String line = "";
+            
+            while ((line = br.readLine()) != null) {
+                String word = "";
+                for (int i = line.length() - 1; i >= 0; i--) {
+                    if (Character.isAlphabetic(line.charAt(i))) {
+                        word += Character.toUpperCase(line.charAt(i));
+                    }
                 }
+                pw.println(word);
             }
-
-            System.out.println(reverseLine(word[0]).toUpperCase() + "\n");
-            System.out.println(reverseLine(word[1]).toUpperCase());
-
-            inputStream.close();
+            
+            pw.close();
 
         } catch (Exception e) {
 
         }
-
-    }
-
-    public static String reverseLine(String line) {
-
-        String reverse = "";
-        for (int i = 0; i < line.length(); i++) {
-            if (line.charAt(i) == 'a' || line.charAt(i) == 'U' || line.charAt(i) == 't'
-                    || line.charAt(i) == 'E' || line.charAt(i) == 'c' || line.charAt(i) == 'm' || line.charAt(i) == 's') {
-                reverse = line.charAt(i) + reverse;
-            }
-        }
-
-        return reverse;
     }
 }

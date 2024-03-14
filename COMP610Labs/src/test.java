@@ -1,40 +1,41 @@
-
-import java.util.Scanner;
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.util.ArrayList;
 import java.util.StringTokenizer;
 
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
-
-/**
- *
- * @author mark
- */
-public class test 
-{
+public class test {
     public static void main(String[] args) {
-//        String originalStr = "Hello";
-//        String reversedStr = "";
-//        System.out.println("Original string: " + originalStr);
-//
-//        for (int i = 0; i < originalStr.length(); i++) {
-//            reversedStr = originalStr.charAt(i) + reversedStr;
-//        }
-//
-//        System.out.println("Reversed string: " + reversedStr);
+        try {
+            FileReader fr = new FileReader("/Users/mark/Documents/GitHub/AUT-COMP-2024/PDC_Tutorials/resources/T02_scores.txt");
+            BufferedReader inputStream = new BufferedReader(fr);
+            
+            ArrayList<String> scoreList = new ArrayList<>();
+            
+            String line = null;
+            String score = "";
+            
+            while((line = inputStream.readLine()) != null) {
+                score = line;
+                scoreList.add(score);
+            }
+            
+            System.out.println("Existing Marks: ");
+            
+            int count = 0;
+            while (scoreList.isEmpty() != true) {
+                System.out.println(scoreList.get(count));
+                count++;
+            }
+            
+            StringTokenizer st = new StringTokenizer(score);
+            
+            while(st.hasMoreTokens()) {
+                System.out.println(st.nextToken());
+            }
+            
+            inputStream.close();
+        } catch (Exception e) {
 
-          String str = "abc,.def,hij,klm";
-          StringTokenizer st = new StringTokenizer(str, " \n.,");
-          while(st.hasMoreTokens()){
-              System.out.println(st.nextToken());
-          }
-          
-          str="abc,,,,,dec. xyz:txt*****aaa.bbb";
-          Scanner sc = new Scanner(str);
-          sc.useDelimeter("");
-          while(sc.hasNext()){
-              System.out.println(sc.next());
-          }
+        }
     }
 }
