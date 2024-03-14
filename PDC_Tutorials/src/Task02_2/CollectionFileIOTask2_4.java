@@ -24,7 +24,7 @@ public class CollectionFileIOTask2_4 {
             boolean isValid = false;
             while (!isValid) {
                 try {
-                    System.out.print(" idk what this says");
+                    System.out.print("Input score: ");
                     score = Integer.parseInt(checkInput(scan, records));
                     isValid = true;
                 } catch (NumberFormatException e) {
